@@ -8,9 +8,9 @@ h1 {
 
 header {
     padding: 3em 0 3em 0em;
-    -webkit-box-shadow: 0px 5px 5px -3px #000000;
-    -moz-box-shadow: 0px 5px 5px -3px #000000;
-    box-shadow: 0px 5px 5px -3px #000000;
+    -webkit-box-shadow: 0px 3px 3px -2px #000000;
+    -moz-box-shadow: 0px 3px 3px -2px #000000;
+    box-shadow: 0px 3px 3px -2px #000000;
     z-index: 1;
     position: relative; 
 }
@@ -47,9 +47,9 @@ nav li.selected a, nav a:hover {
     background-color: white;
     z-index: 2;
     position: relative;
-    -webkit-box-shadow: 0 0 5px 2px #000000;
-    -moz-box-shadow: 0 0 5px  2px #000000;
-    box-shadow: 0 0 5px  2px #000000;
+    -webkit-box-shadow: 0 0 3px 1px #000000;
+    -moz-box-shadow: 0 0 3px  1px #000000;
+    box-shadow: 0 0 3px  1px #000000;
 }
 
 nav a {
@@ -63,21 +63,31 @@ h1, p {
     margin: 0;
 }
 
+ul {
+    display: inline;
+}
+
 #logo {
     background-image: url("/content/images/logo.png");
     background-repeat: no-repeat;
     width: 423px;
     height: 61px;
 }
+
 #main {
     margin: 0 0 3em 0;
     position: relative;
 }
+
 #content {
     margin-top: 3em;
 }
 
 #image {
+}
+
+#list {
+    margin-top: 1.2em;
 }
 
 .push-2 {
