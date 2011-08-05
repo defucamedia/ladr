@@ -59,8 +59,14 @@ nav a {
     padding: .3em 0;
 }
 
-h1, p {
+h1, h2, p {
     margin: 0;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: inherit;
 }
 
 ul {
@@ -86,8 +92,33 @@ ul {
 #image {
 }
 
-#list {
-    margin-top: 1.2em;
+#team {
+    margin-bottom: 0;
+    margin-top: 1em;
+    padding: 0;
+    list-style-type: none;
+}
+
+#team p {
+    margin-top: 1em;
+}
+
+#team img {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1em;
+}
+
+#team li {
+    margin-bottom: 3em;
+}
+
+#team li > div {
+    display: inline-block;
+}
+
+#team h2 + div {
+    font-size: smaller;
 }
 
 .push-2 {
