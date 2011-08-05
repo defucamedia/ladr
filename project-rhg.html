@@ -8,6 +8,17 @@
         <link rel="stylesheet" href="/content/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection" />
         <![endif]-->
         <link rel="stylesheet" href="/content/stylesheets/main.css" type="text/css" media="screen, projection" />
+        <link rel="stylesheet" href="/content/stylesheets/nivo/nivo-slider.css" type="text/css" media="screen, projection" />
+        <link rel="stylesheet" href="/content/stylesheets/nivo/ladr/ladr.css" type="text/css" media="screen, projection" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="/content/scripts/jquery.nivo.slider.pack.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $("#gallery").nivoSlider({
+                    //controlNav: false
+                });
+            })
+        </script>
     </head>
     <body>
         <div class="container">
@@ -18,29 +29,28 @@
             <div id="main" class="span-24">
                 <nav class="span-24">
                     <ul class="push-2">
-                        <li class="selected"><a href="/index.html">Home</a></li>
+                        <li><a href="/index.html">Home</a></li>
                         <li><a href="/about.html">About Us</a></li>
-                        <li><a href="/project-rhg.html">Projects</a></li>
+                        <li class="selected"><a href="/project-rhg.html">Projects</a></li>
                         <li><a href="">Contact Us</a></li>
                     </ul>
                 </nav>
                 <div>
-                    <div id="image"><img src="/content/images/index.jpg" alt="something" /></div>
-                    <div id="content" class="span-22 push-2">
-                        <h1 class="span-8">Welcome to LADR.</h1>
-                        <p class="span-11 push-2">
-                            LADR is an award winning, multi-faceted consulting firm that specializes in landscape architecture, sustainable design, and greenway master planning. Since 1994, LADR has provided consulting services to not-for-profit agencies, private and corporate clients, as well as all levels of government. LADR is routinely involved in a variety of creative and sustainable design initiatives including:                                
-                        </p>
-                        <ul class="span-8 push-12">
-                            <li>low  impact development (LID)</li>
-                            <li>eco-roof design and implementation</li>
-                            <li>on-site storm water management</li>
-                            <li>preparation of environmental protection covenants</li>
-                            <li>school grounds greening</li>
-                            <li>urban park development</li>
-                            <li>urban greenway master planning</li>
-                        </ul>                    
+                    <div id="gallery" class="theme-ladr">
+                        <img src="/content/images/index.jpg" alt="something" />
+                        <img src="/content/images/index2.jpg" alt="something2" />
                     </div>
+                    <div id="content" class="span-22 push-2">
+                        <h1 class="span-10">Rona Home &amp; Garden</h1>
+                        <p class="span-11">
+                            LADR is an award winning, multi-faceted consulting firm that specializes in landscape architecture, sustainable design, and greenway master planning. Since 1994, LADR has provided consulting services to not-for-profit agencies, private and corporate clients, as well as all levels of government. LADR is routinely involved in a variety of creative and sustainable design initiatives including:                                
+                        </p>                        
+                    </div>
+                    <ul id="pager" class="span-24">
+                        <li>p1</li>
+                        <li>p2</li>
+                        <li>p3</li>
+                    </ul>
                 </div>    
             </div>
             <footer class="span-20 push-2">
