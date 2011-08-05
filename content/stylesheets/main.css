@@ -86,6 +86,10 @@ ul {
 #image {
 }
 
+#list {
+    margin-top: 1.2em;
+}
+
 .push-2 {
     margin-bottom: 0;
 }
