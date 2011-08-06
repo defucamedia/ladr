@@ -23,17 +23,16 @@ footer {
 }
 
 nav {
+    overflow: hidden;
     position: absolute;
     top: 0;
-    overflow: hidden;
+    z-index: 13;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0 0 7px 0; /* nav li.selected a box-shadow offset + blur */
-    position: relative;
-    z-index: 10;
 }
 
 nav li {
@@ -92,10 +91,9 @@ ul {
 }
 
 #gallery {
-    position: relative;
     width: 950px;
-    height: 345px;
-    background: url(nivo/default/loading.gif) no-repeat 50% 50%;
+    height: 346px;
+    background: url(nivo/ladr/loading.gif) no-repeat 50% 50%;
 }
 #gallery img {
     position: absolute;
@@ -105,6 +103,10 @@ ul {
 }
 #gallery a {
     border: 0;
+    display: block;
+}
+
+#gallery.show img {
     display: block;
 }
 
@@ -123,6 +125,7 @@ ul {
     display: inline-block;
     vertical-align: top;
     margin-right: 1em;
+    width: 100px;
 }
 
 #team li {

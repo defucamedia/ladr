@@ -1,0 +1,17 @@
+nav li {
+    
+    zoom: 1;
+    display: inline;
+}
+
+#team img {
+    
+    zoom: 1;
+    display: inline;
+}
+
+#team li > div {
+    
+    zoom: 1;
+    display: inline;
+}
