@@ -3,7 +3,7 @@ body, h1 {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3.0em;
 }
 
 header {
@@ -62,6 +62,7 @@ nav a {
 
 h1, h2, p {
     margin: 0;
+	
 }
 
 h2 {
@@ -110,6 +111,19 @@ ul {
     display: block;
 }
 
+#awards {
+    margin-top: 2em;
+}
+
+#awards h2 {
+    font-size: 1.2em;
+}
+
+#awards p {
+    margin-top: 1.5em;
+    font-size: .85em;
+}
+
 #team {
     margin-bottom: 0;
     margin-top: 2em;
@@ -121,6 +135,20 @@ ul {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+#contact {
+    margin-top: 2em;
+}
+
+#awards h2 {
+    font-size: 1.2em;
+}
+
+#contact p {
+    margin-top: 1.5em;
+    font-size: 1em;
+}
+s
 
 #team img {
     display: inline-block;
@@ -140,6 +168,45 @@ ul {
 
 #team h2 + div {
     font-size: smaller;
+}
+
+#form {
+    width: 580px;
+    margin-top: 2em;
+}
+
+#form input, #form textarea {
+    padding: 5px;
+    width: 420px;
+    background-color: #e8dbab;
+    font-family: Helvetica, sans-serif;
+    font-size: 1em;
+    margin: 0px 0px 10px 0px;
+    border: 2px solid #ccc;
+}
+
+#form textarea {
+    height: 90px;
+}
+
+#form textarea:focus, #form input:focus {
+    border: 2px solid #900;
+}
+
+#form input.submit-button {
+    float: left;
+    margin-left: 85px;
+    height: 30px;
+    width: 60px;
+}
+
+label {
+    float: left;
+    text-align: left;
+    margin-right: 15px;
+    width: 70px;
+    padding-top: 5px;
+    font-size: 1em;
 }
 
 #pager {
