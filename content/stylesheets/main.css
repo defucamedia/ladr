@@ -119,9 +119,14 @@ ul {
     font-size: 1.2em;
 }
 
-#awards p {
-    margin-top: 1.5em;
-    font-size: .85em;
+#awards ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#awards li {
+    margin-bottom: 1.5em;
 }
 
 #team {
