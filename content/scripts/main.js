@@ -53,9 +53,13 @@ function ajaxy() {
 }
 
 function gallery() {
-    $("#gallery").nivoSlider({
-        //controlNav: false
-    });
+    $gallery = $("#gallery");
+    
+    if ($gallery.children().length > 1) {
+        $gallery.nivoSlider({
+            //controlNav: false
+        });
+    }
 }
 
 function setSelected() {
