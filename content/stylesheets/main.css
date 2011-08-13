@@ -220,6 +220,35 @@ label {
     list-style-type: none;
 }
 
+#pager li {
+    display: inline-block;
+}
+
+#pager a {
+    display: block;
+    width: 12px;
+    height: 11px;
+    background: url(nivo/ladr/bullets.png) no-repeat;
+    margin: 0 .3em 0 .3em;
+}
+
+#pager li.selected a {
+    background-position: 0 -11px;
+}
+
+#next a, #prev a {
+    width: auto;
+    background: none;
+}
+
+#prev a {
+    padding-right: 1em;
+}
+
+#next a {
+    padding-left: 1em;
+}
+
 .push-2 {
     margin-bottom: 0;
 }
