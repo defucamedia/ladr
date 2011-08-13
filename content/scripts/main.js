@@ -9,8 +9,10 @@
     History.Adapter.bind(window,'statechange',function() {
         var url = History.getState().url;
 	    var $content = $("#main > div");
+        var $footer = $("footer");
         var transitionTime = 300;
         
+        $footer.fadeOut(transitionTime);
         $content.fadeOut(transitionTime, function() {
             $.get(url, function(html) {
                 var $html = $(html);
@@ -21,6 +23,8 @@
                 document.title = title;
 
                 $content.fadeIn(transitionTime);
+                $footer.fadeIn(transitionTime);
+                
                 gallery();
                 setSelected();
             });
