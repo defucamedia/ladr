@@ -62,11 +62,16 @@ nav a, nav a:active, nav a:visited {
 
 h1, h2, p {
     margin: 0;
-	
 }
 
 h2 {
     font-size: 1.2em;
+    font-weight: bold;
+    color: inherit;
+}
+
+h3 {
+    font-size: 1em;
     font-weight: bold;
     color: inherit;
 }
@@ -143,6 +148,24 @@ ul {
 
 #contact {
     margin-top: 2em;
+}
+
+#projects li{
+    list-style-type: none;
+    display: block;
+}
+
+#projects h2{
+    font-size: 1.2em;
+}
+
+#subProjects h3{
+    font-size: 1em;
+    display: inline;
+}
+
+#subProjects ol{
+    display: block;
 }
 
 #awards h2 {
