@@ -80,6 +80,11 @@ ul {
     display: inline;
 }
 
+li{
+    list-style-type: none;
+    display: block;
+}
+
 #logo {
     background-image: url("/content/images/logo.png");
     background-repeat: no-repeat;
@@ -148,11 +153,6 @@ ul {
 
 #contact {
     margin-top: 2em;
-}
-
-#projects li{
-    list-style-type: none;
-    display: block;
 }
 
 #projects h2{
