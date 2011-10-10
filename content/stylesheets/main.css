@@ -275,3 +275,9 @@ label {
 .container {
     overflow: hidden;
 }
+
+.separator {
+    margin-bottom: 5em;
+    border: 0;
+    background: none;
+}
