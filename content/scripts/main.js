@@ -50,7 +50,9 @@ function ajaxy() {
 
     $("a[data-role!='external']").live("click", function() {
         var url = this.href;
-        History.pushState(null, "", url);
+
+        if (url)
+            History.pushState(null, "", url);
         
         return false;
     });
