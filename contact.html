@@ -60,7 +60,7 @@
 			                </p>
 			            </div>
                         <div id="form" class="span-20 push-1">
-                            <form method="post" action="">
+                            <form method="post" action="formmail.php">
                                 <input type="hidden" name="subject" value="Contact Form" />
             
                 				<label for="Name">Name:</label>
@@ -71,7 +71,7 @@
                 				
                 				<label for="Message">Message:</label><br />
                 				<textarea name="Message" rows="20" cols="20" id="Message"></textarea>
-                
+                                <input type="hidden" name="recipient" value="info@defucamedia.com">
                 				<input type="submit" name="submit" value="Submit" class="submit-button" />
                             </form>
                         </div>
