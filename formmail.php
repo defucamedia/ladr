@@ -1106,10 +1106,7 @@ function LoadBuiltinLanguage()
         // Parameters:
         //  $FM_VERS    the FormMail version number
         //  $TECTITE    www.tectite.com
-    $aMessages[MSG_ABOUT_FORMMAIL] = 'Your form submission was processed by '.
-                                     '<a href="http://$TECTITE/">FormMail</a> '.
-                                     '($FM_VERS), a PHP script available from '.
-                                     '<a href="http://$TECTITE/">$TECTITE</a>.';
+    $aMessages[MSG_ABOUT_FORMMAIL] = 'Your form submission was processed.';
 
         // MSG_PREG_FAILED is sent in an Alert message if the TectiteCRM
         // system failed to return the expected result.
