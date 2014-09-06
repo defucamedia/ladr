@@ -73,7 +73,43 @@
   </script>
 
   <script type="text/x-handlebars" id="contact">
-    contact
+    <h1 class="span-22"><br />Contact Us</h1>
+      <div class="span-5" id="contact">
+        <h2>LADR</h2>
+          Landscape Architects Inc.<br />
+          2B-495 Dupplin Road<br />
+          Victoria, BC<br />
+          V8Z 1B8<br /><br />   
+          P. 250.598.0105<br />      
+          F. 250.412.0696<br />
+          E. admin@ladrla.ca                  
+          <p>
+            Do you have a project in mind? Or perhaps a general inquiry for us? We'd be glad to answer any questions you may have. Just use the contact form to the right and we'll reply as soon as possible.
+          </p>                        
+          <p>
+             Don't want to use the form? Feel free to contact us at <a href="mailto:admin@ladrla.ca" data-role="external">admin@ladrla.ca</a>.
+          </p>
+          <p>
+            <a href="https://www.facebook.com/pages/LADR-Landscape-Architects/285741754783464"><img src="/images/facebook.png" /></a>.
+          </p>
+      </div>
+      <div id="form" class="span-20 push-1">
+        <form method="post" action="formmail.php">
+          <input type="hidden" name="subject" value="Contact Form" />
+          <input type="hidden" name="recipients" value="admin@ladrla.ca" />
+
+          <label for="Name">Name:</label>
+          <input type="text" name="realname" id="Name" />
+
+          <label for="Email">Email:</label>
+          <input type="text" name="email" id="Email" />
+          
+          <label for="Message">Message:</label><br />
+          <textarea name="Message" rows="20" cols="20" id="Message"></textarea>
+
+          <input type="submit" name="submit" value="Submit" class="submit-button" />
+        </form>
+      </div>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
