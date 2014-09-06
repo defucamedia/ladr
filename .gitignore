@@ -1,3 +1,6 @@
 .redcar
 redcar.out
 *.sublime-*
+error_log
+.htaccess
+.ftpquota
