@@ -1,64 +1,86 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>LADR Landscape Architects Inc.</title>
-        <link rel="stylesheet" href="/content/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
-        <link rel="stylesheet" href="/content/stylesheets/blueprint/print.css" type="text/css" media="print" />
-        <!--[if lt IE 8]>
-        <link rel="stylesheet" href="/content/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection" />
-        <![endif]-->
-        <link rel="stylesheet" href="/content/stylesheets/nivo/nivo-slider.css" type="text/css" media="screen, projection" />
-        <link rel="stylesheet" href="/content/stylesheets/nivo/ladr/ladr.css" type="text/css" media="screen, projection" />
-        <link rel="stylesheet" href="/content/stylesheets/main.css" type="text/css" media="screen, projection" />
-        <!--[if lt IE 8]>
-        <link rel="stylesheet" href="/content/stylesheets/ie7.css" type="text/css" media="screen, projection" />
-        <![endif]-->
-        <script type="text/javascript">if ( typeof window.JSON === 'undefined' ) { document.write('<script src="/content/scripts/json2.min.js"><\/script>'); }</script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script type="text/javascript" src="/content/scripts/history.min.js"></script>
-        <script type="text/javascript" src="/content/scripts/jquery.nivo.slider.pack.js"></script>
-        <script type="text/javascript" src="/content/scripts/main.js"></script>
-        <!--[if lt IE 9]>
-        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-        <div class="container">
-            <header class="span-22 prepend-2">
-                <div id="logo"></div>
-            </header>
+<head>
+  <meta charset="utf-8">
+  <title>LADR Landscape Architects Inc.</title>
+  <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print" />
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/css/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="/css/nivo/nivo-slider.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/nivo/ladr/ladr.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection" />
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/css/ie7.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="css/style.css">
+  <!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <script type="text/x-handlebars">
+    <div class="container">
+      <header class="span-22 prepend-2">
+        <div id="logo"></div>
+      </header>
             
-            <div id="main" class="span-24">
-                <nav class="span-24">
-                    <ul class="push-2">
-                        <li class="selected"><a href="/index.html">Home</a></li>
-                        <li><a href="/about.html">About Us</a></li>
-                        <li><a href="/projects.html">Projects</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
-                    </ul>
-                </nav>
-                <div>
-                    <div id="gallery" class="show"><img src="/content/images/index.jpg" alt="something" /></div>
-                    <div id="content" class="span-22 push-2">
-                        <h1 class="span-8">Welcome to LADR</h1>
-                        <p class="span-11 push-2">
-                            LADR is an award winning, multi-faceted consulting firm that specializes in landscape architecture, sustainable design, and masterplanning. Since 1994, LADR has provided consulting services to not-for-profit agencies, private and corporate clients, as well as all levels of government. LADR is routinely involved in a variety of creative and sustainable design initiatives including:                                
-                        </p>
-                        <ul class="span-8 push-12"><br />
-                            <li>low  impact development (LID)</li>
-                            <li>eco-roof design and implementation</li>
-                            <li>on-site storm water management</li>
-                            <li>environmental protection covenants</li>
-                            <li>school grounds greening</li>
-                            <li>urban park development</li>
-                            <li>urban greenway master planning</li>
-                        </ul>                    
-                    </div>
-                </div>    
-            </div>
-            <footer class="span-20 push-2">
-                LADR Landscape Architects &copy; 2011. Site design by <a href="http://www.defucamedia.com/" data-role="external">De Fuca Media</a>
-            </footer>
-        </div>
-    </body>
+      <div id="main" class="span-24">
+        <nav class="span-24">
+          <ul class="push-2">
+            <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+            <li>{{#link-to 'about'}}About Us{{/link-to}}</li>
+            <li>{{#link-to 'projects'}}Projects{{/link-to}}</li>
+            <li>{{#link-to 'contact'}}Contact Us{{/link-to}}</li>
+          </ul>
+        </nav>
+        <div>
+          {{outlet}}
+        </div>    
+      </div>
+      <footer class="span-20 push-2">
+        LADR Landscape Architects &copy; 2011. Site design by <a href="http://www.defucamedia.com/" data-role="external">De Fuca Media</a>
+      </footer>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="index">
+    <div id="gallery" class="show"><img src="/images/index.jpg" alt="something" /></div>
+      <div id="content" class="span-22 push-2">
+        <h1 class="span-8">Welcome to LADR</h1>
+        <p class="span-11 push-2">
+          LADR is an award winning, multi-faceted consulting firm that specializes in landscape architecture, sustainable design, and masterplanning. Since 1994, LADR has provided consulting services to not-for-profit agencies, private and corporate clients, as well as all levels of government. LADR is routinely involved in a variety of creative and sustainable design initiatives including:                                
+        </p>
+        <ul class="span-8 push-12"><br />
+          <li>low  impact development (LID)</li>
+          <li>eco-roof design and implementation</li>
+          <li>on-site storm water management</li>
+          <li>environmental protection covenants</li>
+          <li>school grounds greening</li>
+          <li>urban park development</li>
+          <li>urban greenway master planning</li>
+        </ul>                    
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="about">
+    about
+  </script>
+
+  <script type="text/x-handlebars" id="projects">
+    projects
+  </script>
+
+  <script type="text/x-handlebars" id="contact">
+    contact
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.7.0.js"></script>
+  <script type="text/javascript" src="/js/libs/jquery.nivo.slider.pack.js"></script>
+  <script src="js/app.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
+</body>
 </html>
