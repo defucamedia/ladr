@@ -155,15 +155,6 @@ li{
     margin-top: 2em;
 }
 
-.subProject h3{
-    font-size: 1em;
-    display: inline;
-}
-
-.subProject ol{
-    display: block;
-}
-
 #awards h2 {
     font-size: 1.2em;
 }
@@ -191,6 +182,27 @@ li{
 
 #team h2 + div {
     font-size: smaller;
+}
+
+#project-categories li {
+    display: inline;
+}
+
+#project-categories a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#project-categories .active {
+    text-decoration: underline;
+}
+
+#projects li {
+    display: inline-block;
+}
+
+#projects li img, #projects li span {
+    display: block;
 }
 
 #form {
