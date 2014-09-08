@@ -65,7 +65,16 @@
 
   <script type="text/x-handlebars" id="about">
     <div id="content" class="span-22 push-2">
-      about
+      <h1 class="span-22"><br />Our Team</h1>
+      <div class="span-5" id="awards">
+        <h2>Awards</h2>
+        <ol>
+        {{#each model}}
+          <li>{{year}} {{desc}}</li>
+        {{/each}}
+        </ol>
+      </div>
+      
     </div>
   </script>
 

@@ -12,14 +12,14 @@ App.Router.map(function() {
 App.ProjectsRoute = Ember.Route.extend({
     model: function() {
         return this.store.find("project");
-        return this.store.find("project").then(function(projects) {
-            var categories = projects.map(function(p) {
-                return p.get("categories");
-            });
-            return { projects: projects, categories: categories };
-        });
     }
-})
+});
+
+App.AboutRoute = Ember.Route.extend({
+    model: function() {
+        return this.store.find("award");
+    }
+});
 
 // App.ProjectRoute = Ember.Route.extend({
 //     model: function(params) {
@@ -67,6 +67,11 @@ App.Project = DS.Model.extend({
     images: DS.attr()
 });
 
+App.Award = DS.Model.extend({
+    desc: DS.attr(),
+    year: DS.attr()
+})
+
 /// Data
 App.ApplicationAdapter = DS.FixtureAdapter.extend();
 App.Project.FIXTURES = [
@@ -74,4 +79,9 @@ App.Project.FIXTURES = [
         images: [""] },
     { id: "project-2", name: "Project 2", city: "city2", province: "province2", categories: ["category1", "category2"], features: [],           thumbnail: "",
         images: [""] },
+];
+
+App.Award.FIXTURES = [
+    { id: 1, year: 2012, desc: "Award1" },
+    { id: 2, year: 2013, desc: "Award2" }
 ];
