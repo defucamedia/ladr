@@ -17,7 +17,24 @@ App.ProjectsRoute = Ember.Route.extend({
 
 App.AboutRoute = Ember.Route.extend({
     model: function() {
-        return this.store.find("award");
+        return Ember.RSVP.hash({
+            awards: this.store.find("award"),
+            team: this.store.find("person")
+        });
+    },
+    renderTemplate: function(c, m) {
+        this.render();
+        this.render("awards", {
+            into: "about",
+            outlet: "awards",
+            controller: "award",
+            model: m.awards
+        });
+        this.render("team", {
+            into: "about",
+            outlet: "team",
+            model: m.team
+        });
     }
 });
 
@@ -56,6 +73,11 @@ App.ProjectsController = Ember.ArrayController.extend({
     }.property("category", "model")
 });
 
+ App.AwardController = Ember.ArrayController.extend({
+    sortProperties: ["year"],
+    sortAscending: false
+ });
+
 /// Models
 App.Project = DS.Model.extend({
     name: DS.attr(),
@@ -70,6 +92,14 @@ App.Project = DS.Model.extend({
 App.Award = DS.Model.extend({
     desc: DS.attr(),
     year: DS.attr()
+});
+
+App.Person = DS.Model.extend({
+    name: DS.attr(),
+    avatar: DS.attr(),
+    certs: DS.attr(),
+    title: DS.attr(),
+    desc: DS.attr()
 })
 
 /// Data
@@ -83,5 +113,11 @@ App.Project.FIXTURES = [
 
 App.Award.FIXTURES = [
     { id: 1, year: 2012, desc: "Award1" },
-    { id: 2, year: 2013, desc: "Award2" }
+    { id: 2, year: 2013, desc: "Award2" },
+    { id: 3, year: 2011, desc: "Award3" }
+];
+
+App.Person.FIXTURES = [
+    { id: 1, name: "person1", avatar: "", title: "title1", certs: "certs1", desc: "description1" },
+    { id: 2, name: "person2", avatar: "", title: "title2", certs: "certs2", desc: "description2" }
 ];

@@ -68,14 +68,37 @@
       <h1 class="span-22"><br />Our Team</h1>
       <div class="span-5" id="awards">
         <h2>Awards</h2>
-        <ol>
-        {{#each model}}
-          <li>{{year}} {{desc}}</li>
-        {{/each}}
-        </ol>
+        {{outlet awards}}
       </div>
-      
+      {{outlet team}}
     </div>
+  </script>
+
+  <script type="text/x-handlebars" id="awards">
+    <ol>
+      {{#each}}
+        <li>{{year}} {{desc}}</li>
+      {{/each}}
+    </ol>
+  </script>
+
+  <script type="text/x-handlebars" id="team">
+    <ul id="team" class="span-15 push-1">
+      {{#each model}}
+        <li>
+          <img src="{{avatar}}" class="span-3">
+          <div class="span-11">
+              <h2>{{name}}</h2>
+              <div>{{certs}}</div>
+              <div>{{title}}</div>
+              <div>{{email}}</div>
+          </div>
+          <div class="span-12">
+            <p>{{desc}}</p>
+          </div>
+        </li>
+      {{/each}}
+      </ul>
   </script>
 
   <script type="text/x-handlebars" id="projects">
