@@ -1,4 +1,45 @@
 App = Ember.Application.create();
+App.AnimatedRoute = Ember.Route.extend({
+    _transitioning: false,
+    willEnter: function() {
+        console.log("ENTER");
+        return $('#outlet, footer').fadeIn().promise();
+    },
+    willExit: function() {
+        console.log("EXIT");
+        return $('#outlet, footer').fadeOut().promise();
+    },
+
+    deactivate: function() { this._transitioning = false; },
+
+    afterModel: function(model, transition) {
+        var route = this
+        transition.then(function() {
+            new Ember.RSVP.Promise(function(resolve, _) {
+                Ember.run.next(this, function() {
+                    route.willEnter().then(resolve);
+                });
+            });
+        });
+
+        this._super.apply(this, arguments);
+    },
+
+    actions: {
+        willTransition: function(transition) {
+            var routeNames = transition.handlerInfos.map(function(o) {
+               return o.name;
+            });
+            var isParent = routeNames.indexOf(this.routeName) > -1;
+            if (isParent) { return true; }
+            if (this._transitioning) { return true; }
+
+            this._transitioning = true;
+            transition.abort();
+            this.willExit().then(function() { transition.retry(); });
+        }
+    }
+});
 
 /// Routing
 App.Router.map(function() {
@@ -9,13 +50,16 @@ App.Router.map(function() {
     });
 });
 
-App.ProjectsRoute = Ember.Route.extend({
+App.IndexRoute = App.AnimatedRoute.extend({});
+App.ContactRoute = App.AnimatedRoute.extend({});
+
+App.ProjectsRoute = App.AnimatedRoute.extend({
     model: function() {
         return this.store.find("project");
     }
 });
 
-App.AboutRoute = Ember.Route.extend({
+App.AboutRoute = App.AnimatedRoute.extend({
     model: function() {
         return Ember.RSVP.hash({
             awards: this.store.find("award"),
@@ -121,3 +165,5 @@ App.Person.FIXTURES = [
     { id: 1, name: "person1", avatar: "", title: "title1", certs: "certs1", desc: "description1" },
     { id: 2, name: "person2", avatar: "", title: "title2", certs: "certs2", desc: "description2" }
 ];
+
+
