@@ -1,17 +1,15 @@
 App = Ember.Application.create();
 App.AnimatedRoute = Ember.Route.extend({
+    hasTransitionedOnce: false,
     _transitioning: false,
     willEnter: function() {
-        console.log("ENTER");
         return $('#outlet, footer').fadeIn().promise();
     },
     willExit: function() {
-        console.log("EXIT");
         return $('#outlet, footer').fadeOut().promise();
     },
 
-    deactivate: function() { this._transitioning = false; },
-
+    deactivate: function() { this._transitioning = false; this.hasTransitionedOnce = true; },
     afterModel: function(model, transition) {
         var route = this
         transition.then(function() {
@@ -50,12 +48,18 @@ App.Router.map(function() {
     });
 });
 
-App.IndexRoute = App.AnimatedRoute.extend({});
-App.ContactRoute = App.AnimatedRoute.extend({});
+App.IndexRoute = App.AnimatedRoute.extend(App.HistoryMixin);
+App.ContactRoute = App.AnimatedRoute.extend(App.HistoryMixin);
 
 App.ProjectsRoute = App.AnimatedRoute.extend({
     model: function() {
         return this.store.find("project");
+    },
+    actions: {
+        willTransition: function(t) {
+            this.controllerFor("project").set("animateModal", true);
+            return true;
+        },
     }
 });
 
@@ -82,11 +86,25 @@ App.AboutRoute = App.AnimatedRoute.extend({
     }
 });
 
-// App.ProjectRoute = Ember.Route.extend({
-//     model: function(params) {
-//         return this.store.find("project", params.id)
-//     }
-// });
+App.ProjectRoute = Ember.Route.extend({
+    model: function(params) {
+        return this.store.find("project", params.id)
+    },
+    renderTemplate: function(c, m) {
+        this.render("project", {
+            into: "application",
+            outlet: "modal"
+        });
+    },
+    actions: {
+        closeProject: function(redirect) {
+            if (!this.controller.get("animateModal"))
+                this.transitionTo("projects");
+            else
+                window.history.back();
+        }
+    }
+});
 
 App.Router.reopen({
     location: 'auto'
@@ -117,10 +135,28 @@ App.ProjectsController = Ember.ArrayController.extend({
     }.property("category", "model")
 });
 
- App.AwardController = Ember.ArrayController.extend({
+App.ProjectController = Ember.Controller.extend({
+    animateModal: false,
+    actions: {
+        close: function() {
+            return this.send("closeProject", this.get("animateModal"));
+        }
+    }
+});
+
+App.AwardController = Ember.ArrayController.extend({
     sortProperties: ["year"],
     sortAscending: false
- });
+});
+
+/// Components
+App.ModalDialogComponent = Ember.Component.extend({
+    actions: {
+        close: function() {
+            return this.sendAction();
+        }
+    }
+});
 
 /// Models
 App.Project = DS.Model.extend({

@@ -24,7 +24,6 @@
       <header class="span-22 prepend-2">
         <div id="logo"></div>
       </header>
-            
       <div id="main" class="span-24">
         <nav class="span-24">
           <ul class="push-2">
@@ -42,6 +41,7 @@
         LADR Landscape Architects &copy; 2011. Site design by <a href="http://www.defucamedia.com/" data-role="external">De Fuca Media</a>
       </footer>
     </div>
+    {{outlet modal}}
   </script>
 
   <script type="text/x-handlebars" id="index">
@@ -112,14 +112,41 @@
       <ul id="projects">
       {{#each filteredProjects}}
         <li>
-          <a href="#">
+          {{#link-to 'project' this}}
             <img src="{{thumbnail}}" />
             {{name}}
             <span>{{city}}, {{province}}</span>
-          </a>
+          {{/link-to}}
         </li>
       {{/each}}
       </ul>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="project">
+    {{#modal-dialog action="close" animate=animateModal}}
+      <div id="gallery" class="theme-ladr">
+      {{#each model.images}}
+        <img src="{{this}}" />
+      {{/each}}
+      </div>
+      <div class="span-22 push-2">
+          <h1 class="span-12">{{model.name}}</h1>
+          <h2 class="span-12">{{model.city}}, {{model.province}}</h2>
+          <ul class="span-12" id="features">
+          {{#each model.features}}
+            <li>{{this}}</li>
+          {{/each}}
+          </ul>
+      </div>
+    {{/modal-dialog}}
+  </script>
+  
+  <script type="text/x-handlebars" id="components/modal-dialog">
+    <div class="overlay" {{action "close"}}></div>
+    <div {{bind-attr class=":modal animate:animate"}}>
+      <button id="close" {{action "close"}}>X</button>
+      {{yield}}
     </div>
   </script>
 
