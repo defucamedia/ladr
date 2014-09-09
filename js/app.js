@@ -44,7 +44,7 @@ App.Router.map(function() {
     this.resource('about');
     this.resource('contact');
     this.resource('projects', function() {
-        this.resource('project', { path: ":id" });
+        this.resource('project', { path: ":slug" });
     });
 });
 
@@ -56,7 +56,7 @@ App.ProjectsRoute = App.AnimatedRoute.extend({
         return this.store.find("project");
     },
     actions: {
-        willTransition: function(t) {
+        willTransition: function() {
             this.controllerFor("project").set("animateModal", true);
             return true;
         },
@@ -88,7 +88,7 @@ App.AboutRoute = App.AnimatedRoute.extend({
 
 App.ProjectRoute = Ember.Route.extend({
     model: function(params) {
-        return this.store.find("project", params.id)
+        return this.store.find("project", params.slug)
     },
     renderTemplate: function(c, m) {
         this.render("project", {
@@ -160,6 +160,7 @@ App.ModalDialogComponent = Ember.Component.extend({
 
 /// Models
 App.Project = DS.Model.extend({
+    slug: DS.attr(),
     name: DS.attr(),
     city: DS.attr(),
     province: DS.attr(),
@@ -185,9 +186,9 @@ App.Person = DS.Model.extend({
 /// Data
 App.ApplicationAdapter = DS.FixtureAdapter.extend();
 App.Project.FIXTURES = [
-    { id: "project-1", name: "Project 1", city: "city1", province: "province1", categories: ["category1"],              features: ["award1"],   thumbnail: "",
+    { id: 1, slug: "project-1", name: "Project 1", city: "city1", province: "province1", categories: ["category1"],              features: ["award1"],   thumbnail: "",
         images: [""] },
-    { id: "project-2", name: "Project 2", city: "city2", province: "province2", categories: ["category1", "category2"], features: [],           thumbnail: "",
+    { id: 2, slug: "project-2", name: "Project 2", city: "city2", province: "province2", categories: ["category1", "category2"], features: [],           thumbnail: "",
         images: [""] },
 ];
 
