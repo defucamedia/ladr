@@ -1,7 +1,7 @@
 
 .theme-ladr .nivoSlider {
 	position:relative;
-	background:#fff url(loading.gif) no-repeat 50% 50%;
+	background:#fff url(/assets/nivo/ladr/loading.gif) no-repeat 50% 50%;
     -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
     -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
     box-shadow: 0px 1px 5px 0px #4a4a4a;
@@ -27,7 +27,7 @@
 	display:block;
 	width: 12px;
 	height: 11px;
-	background:url(bullets.png) no-repeat;
+	background:url(/assets/nivo/ladr/bullets.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 	margin-right:3px;
@@ -41,7 +41,7 @@
 	display:block;
 	width:30px;
 	height:30px;
-	background:url(arrows.png) no-repeat;
+	background:url(/assets/nivo/ladr/arrows.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 }
