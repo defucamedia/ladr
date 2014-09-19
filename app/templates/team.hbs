@@ -1,7 +1,7 @@
 <ul id="team" class="span-15 push-1">
 {{#each model}}
   <li>
-    <img src="{{avatar}}" class="span-3">
+    <img {{bind-attr src="avatarPath"}} class="span-3">
     <div class="span-11">
       <h2>{{name}}</h2>
       <div>{{certs}}</div>
