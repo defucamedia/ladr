@@ -1,4 +1,4 @@
-# Ladr
+# Ladr [![Build Status](https://travis-ci.org/defucamedia/ladr.svg?branch=master)](https://travis-ci.org/defucamedia/ladr)
 
 This README outlines the details of collaborating on this Ember application.
 
