@@ -1,0 +1,19 @@
+<div id="content" class="span-22 push-2">
+  <ul id="project-categories">
+    <li>{{#link-to 'projects' (query-params category="")}}All{{/link-to}}</li>
+  {{#each categories}}
+    <li>{{#link-to 'projects' (query-params category=this)}}{{this}}{{/link-to}}</li>
+  {{/each}}
+  </ul>
+  <ul id="projects">
+  {{#each filteredProjects}}
+    <li>
+      {{#link-to 'project' this}}
+        <img src="{{thumbnail}}" />
+        {{name}}
+        <span>{{city}}, {{province}}</span>
+      {{/link-to}}
+    </li>
+  {{/each}}
+  </ul>
+</div>

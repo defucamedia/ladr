@@ -1,0 +1,16 @@
+<ul id="team" class="span-15 push-1">
+{{#each model}}
+  <li>
+    <img src="{{avatar}}" class="span-3">
+    <div class="span-11">
+      <h2>{{name}}</h2>
+      <div>{{certs}}</div>
+      <div>{{title}}</div>
+      <div>{{email}}</div>
+    </div>
+    <div class="span-12">
+      <p>{{desc}}</p>
+    </div>
+  </li>
+{{/each}}
+</ul>
