@@ -2,6 +2,10 @@
     #RequestHeader set X-Prerender-Token "PRERENDER_TOKEN"
 </IfModule>
  
+<IfModule mod_dir.c>
+    FallbackResource /index.html
+</IfModule>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
  
