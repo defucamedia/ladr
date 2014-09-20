@@ -14,7 +14,7 @@ var model = DS.Model.extend({
 model.reopenClass({
     FIXTURES: [
         { id: "project-1", name: "Project 1", sortOrder: 2, city: "city1", province: "province1", categories: ["category1"],              features: ["award1"],   thumbnail: "",
-            images: [""] },
+            images: ["/assets/images/1450Dallas/1450Dallas1.jpg"] },
         { id: "project-2", name: "Project 2", sortOrder: 1, city: "city2", province: "province2", categories: ["category1", "category2"], features: [],           thumbnail: "",
             images: [""] },
     ]
