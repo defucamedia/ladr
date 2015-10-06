@@ -1,23 +1,7 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# compiled output
+node_modules
+jspm_packages
+bower_components
+.idea
+.DS_STORE
 /dist
-/tmp
-
-# dependencies
-/node_modules
-/bower_components/*
-
-# misc
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
-npm-debug.log
-testem.log
-
-.redcar
-redcar.out
-*.sublime-*
-error_log
-.ftpquota
+build/reports
