@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Daffey Duck",
+        "email": "dduck@looneytons.ca",
+        "title": "Chief Hosa",
+        "certs": "ACME",
+        "avatar": "/assets/images/personnel/dduck.jpg",
+        "desc": "lots o good info"
+    },
+    {
+        "name": "Yosemite Sam",
+        "email": "ysam@looneytons.ca",
+        "title": "Gunslinger",
+        "certs": "ACME",
+        "avatar": "/assets/images/personnel/ysam.jpg",
+        "desc": "lots o good info"
+    }
+]

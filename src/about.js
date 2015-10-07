@@ -3,23 +3,22 @@ import {HttpClient} from 'aurelia-fetch-client';
 import 'fetch';
 
 @inject(HttpClient)
-export class Users{
-  heading = 'Github Users';
-  users = [];
+export class About {
+  heading = 'The people behind it all.';
+  people = [];
 
   constructor(http){
     http.configure(config => {
       config
-        .useStandardConfiguration()
-        .withBaseUrl('https://api.github.com/');
+        .useStandardConfiguration();
     });
 
     this.http = http;
   }
 
   activate(){
-    return this.http.fetch('users')
+    return this.http.fetch('data/people.json')
       .then(response => response.json())
-      .then(users => this.users = users);
+      .then(people => this.people = people);
   }
 }
