@@ -1,0 +1,36 @@
+<template>
+    <section class="au-animate">
+        <h2>Speak to us.</h2>
+
+        <p translate="no">
+            <strong>LADR</strong><br>
+            Landscape Architects Inc.<br>
+            2B-495 Dupplin Road<br>
+            Victora, <abbr title="British Columbia">BC</abbr> <br>
+            V8Z 1B8
+        </p>
+        <p>
+            P. 250.598.0105<br>
+            F. 250.412.0696<br>
+            E. admin@ladrla.ca
+        </p>
+        <p>
+            Do you have a project...
+        </p>
+        <p>
+            Don't want to use...
+        </p>
+        <form submit.delegate="submit()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" value.bind="name" />
+
+            <label for="email">Email:</label>
+            <input type="text" value.bind="email" />
+
+            <label for="message">Message:</label>
+            <textarea id="message" value.bind="message"></textarea>
+
+            <input type="submit" value="Submit" disabled.bind="!canSubmit" class="btn btn-primary" />
+        </form>
+    </section>
+</template>
