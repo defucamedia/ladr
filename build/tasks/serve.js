@@ -11,10 +11,13 @@ gulp.task('serve', ['build'], function(done) {
     port: 9000,
     server: {
       baseDir: ['.'],
-      middleware: [historyApiFallback(), function (req, res, next) {
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        next();
-    }]
+      middleware: [
+          historyApiFallback(),
+          function (req, res, next) {
+              res.setHeader('Access-Control-Allow-Origin', '*');
+              next();
+          }
+      ]
     }
   }, done);
 });

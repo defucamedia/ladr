@@ -4,7 +4,7 @@
         "email": "dduck@looneytons.ca",
         "title": "Chief Hosa",
         "certs": "ACME",
-        "avatar": "/assets/images/personnel/dduck.jpg",
+        "avatar": "/images/people/dduck.png",
         "desc": "lots o good info"
     },
     {
@@ -12,7 +12,7 @@
         "email": "ysam@looneytons.ca",
         "title": "Gunslinger",
         "certs": "ACME",
-        "avatar": "/assets/images/personnel/ysam.jpg",
+        "avatar": "/images/people/ysam.jpg",
         "desc": "lots o good info"
     }
 ]
