@@ -7,12 +7,12 @@
     </form>
     <ol>
         <li repeat.for="c of categories">
-            <a route-href="route: projects; params.bind: { cat: c }" click.delegate="$parent.changeCat(c)">${c}</a>
+            <a route-href="route: projects; params.bind: { slug: '', cat: c }" click.delegate="$parent.changeCat(c)">${c}</a>
         </li>
     </ol>
     <ul>
         <li repeat.for="p of projects">
-            ${p.name}
+            <a click.delegate="$parent.project(p.slug)">${p.name}</a>
         </li>
     </ul>
   </section>
