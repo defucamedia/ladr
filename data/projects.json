@@ -1,5 +1,5 @@
 [
-    { "slug": "project-1", "name": "project 1", "categories": ["cat1", "cat2"], "tags": ["tag1", "tag2"], "images": ["/path1.jpg", "/path2.jpg"] },
+    { "slug": "project-1", "name": "project 1", "categories": ["cat1", "cat2"], "tags": ["tag1", "tag2"], "images": ["/images/project1/1.png", "/path2.jpg"] },
     { "slug": "asdf", "name": "asdf 2", "categories": ["cat2", "Cat3"], "tags": ["tag2", "tag3"], "images": ["/path3.jpg", "/path4.jpg"] },
     { "slug": "project-3", "name": "project 3", "categories": ["cat3", "cat4"], "tags": ["tag3", "tag4"], "images": ["/path5.jpg", "/path6.jpg"] },
     { "slug": "project-4", "name": "project 4", "categories": ["cat4", "cat5"], "tags": ["tag4", "tag5"], "images": ["/path7.jpg", "/path8.jpg"] },
