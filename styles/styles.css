@@ -6,10 +6,12 @@ body {
     text-align: center;
 }
 
-#projects > ol {
+#projects > ol, #projects > ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-transform: capitalize;
+    font-variant: small-caps;
 }
 
 #projects li {
@@ -52,22 +54,22 @@ body {
     bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    padding: 0;
 }
 
 dialog-overlay.active {
-    /*background-color: black;*/
-    opacity: 0.4;
+    background-color: black;
+    opacity: 0.4 !important;
 }
-
-
 
 dialog-container .modal {
     position: relative;
-top: auto;
-right: auto;
-bottom: auto;
-left: auto;
-display: block;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    display: block;
+    border-radius: 6px;
 }
 
 section > h2 {
@@ -78,6 +80,11 @@ section > h2 {
 
 .navbar-default {
     background-color: #fdfffa;
+}
+
+.navbar-default .navbar-nav a {
+    text-transform: capitalize;
+    font-variant: small-caps;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
@@ -98,8 +105,15 @@ section > h2 {
   }
 }
 
-section {
-    margin: 0 20px;
+@media (min-width: 1200px) {
+    .container {
+        width: 900px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 900px;
+    }
 }
 
 .navbar-nav li.loader {
