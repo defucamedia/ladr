@@ -15,7 +15,14 @@ export class Project {
     })
   }
 
+  attached() {
+      jQuery(this.carousel).carousel();
+  }
   activate(project) {
       this.project = project;
+  }
+
+  close() {
+      this.controller.ok();
   }
 }

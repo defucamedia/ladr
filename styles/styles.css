@@ -54,6 +54,22 @@ body {
     overflow-y: auto;
 }
 
+dialog-overlay.active {
+    /*background-color: black;*/
+    opacity: 0.4;
+}
+
+
+
+dialog-container .modal {
+    position: relative;
+top: auto;
+right: auto;
+bottom: auto;
+left: auto;
+display: block;
+}
+
 section > h2 {
     text-align: center;
     text-transform: capitalize;
