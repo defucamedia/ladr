@@ -1,5 +1,5 @@
 <template>
-    <section class="au-animate">
+    <section id="contact" class="au-animate">
         <h2>Speak to us.</h2>
 
         <p translate="no">
@@ -12,7 +12,7 @@
         <p>
             P. 250.598.0105<br>
             F. 250.412.0696<br>
-            E. admin@ladrla.ca
+            E. <a href="mailto:admin@ladrla.ca">admin@ladrla.ca</a>
         </p>
         <p>
             Do you have a project...
@@ -20,15 +20,29 @@
         <p>
             Don't want to use...
         </p>
-        <form submit.delegate="submit()">
-            <label for="name">Name:</label>
-            <input type="text" id="name" value.bind="name" />
+        <div id="result" class="alert alert-${result.status}" show.bind="submitted">
+            <strong>${result.status}</strong> ${result.message}
+        </div>
+        <form class="form-horizontal" show.bind="!submitted" submit.delegate="submit()">
+            <div class="form-group">
+                <label for="name" class="control-label col-sm-1">Name:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control input-sm" id="name" value.bind="name" />
+                </div>
+            </div>
 
-            <label for="email">Email:</label>
-            <input type="text" value.bind="email" />
-
-            <label for="message">Message:</label>
-            <textarea id="message" value.bind="message"></textarea>
+            <div class="form-group">
+                <label for="email" class="control-label col-sm-1">Email:</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control input-sm" value.bind="email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message" class="control-label col-sm-1">Message:</label>
+                <div class="col-sm-11">
+                    <textarea id="message" class="form-control" value.bind="message"></textarea>
+                </div>
+            </div>
 
             <input type="submit" value="Submit" disabled.bind="!canSubmit" class="btn btn-primary" />
         </form>

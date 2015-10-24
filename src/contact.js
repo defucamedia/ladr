@@ -4,10 +4,12 @@ import 'fetch';
 
 @inject(HttpClient)
 export class Contact {
-    name = 'asdf';
+    name = '';
     email = '';
     message = '';
     canSubmit = true;
+    submitted = false;
+    result = { status: "success", message: "" };
 
   constructor(http){
     http.configure(config => {
@@ -29,7 +31,14 @@ export class Contact {
       formData.append('message', this.message);
 
       setTimeout(function() {
-          self.canSubmit = true;
+          self.submitted = true;
+          self.result.status = "success";
+          self.result.message = "We have recieved your message.";
+          setTimeout(() => {
+              self.submitted = false;
+              self.canSubmit = true;
+              self.result.message = "";
+          }, 2000);
       }, 1000);
 
     //   this.http
