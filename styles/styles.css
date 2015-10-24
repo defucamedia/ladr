@@ -78,6 +78,26 @@ section > h2 {
     font-variant: small-caps;
 }
 
+#testimonials {
+    border-bottom: solid 1px grey;
+}
+
+#testimonials blockquote {
+    border: 0;
+    font-style: italic;
+    font-size: inherit;
+}
+
+#testimonials blockquote footer {
+    font-size: 1rem;
+    font-style: italic;
+    text-align: right;
+}
+
+.carousel .item p {
+    text-align: center;
+}
+
 .navbar-default {
     background-color: #fdfffa;
 }

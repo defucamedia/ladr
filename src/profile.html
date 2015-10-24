@@ -1,9 +1,16 @@
 <template>
   <section class="au-animate">
     <h2>${heading}</h2>
-    <ul id="testimonials">
-        <li repeat.for="t of testimonials">${t}</li>
-    </ul>
+    <div id="testimonials" class="carousel slide modal-body" data-ride="carousel" ref="carousel">
+        <div class="carousel-inner" role="listbox">
+            <blockquote class="item ${$index === 0 ? 'active' : ''}" repeat.for="t of testimonials">
+                <p>${t.text}</p>
+                <footer>
+                    <cite>${t.author}</cite>
+                </footer>
+            </blockquote>
+        </div>
+    </div>
     <p>
         Found in 1994 ...
     </p>

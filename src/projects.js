@@ -3,7 +3,6 @@ import {HttpClient} from 'aurelia-fetch-client';
 import {Router} from 'aurelia-router';
 import {DialogService} from 'aurelia-dialog';
 import {Project} from './project';
-import {Base} from './base';
 import 'fetch';
 
 @inject(HttpClient, Router, DialogService)

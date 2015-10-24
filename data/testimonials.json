@@ -1,4 +1,4 @@
 [
-    "one",
-    "two"
+    { "author": "dude1", "text": "one" },
+    { "author": "dude2", "text": "two" }
 ]
