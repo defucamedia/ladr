@@ -1,0 +1,13 @@
+<template>
+    <h2>${heading}</h2>
+    <div id="testimonials" class="carousel slide modal-body" data-ride="carousel" ref="carousel">
+        <div class="carousel-inner" role="listbox">
+            <blockquote class="item ${$index === 0 ? 'active' : ''}" repeat.for="t of testimonials">
+                <p>${t.text}</p>
+                <footer>
+                    <cite>${t.author}</cite>
+                </footer>
+            </blockquote>
+        </div>
+    </div>
+</template>

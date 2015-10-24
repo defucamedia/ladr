@@ -4,6 +4,7 @@ import 'fetch';
 
 @inject(HttpClient)
 export class Contact {
+    heading = 'Speak to us.';
     name = '';
     email = '';
     message = '';

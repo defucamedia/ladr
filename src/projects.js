@@ -7,6 +7,7 @@ import 'fetch';
 
 @inject(HttpClient, DialogService, EventAggregator)
 export class Projects {
+    heading = 'The Projects.';
     projects = [];
     allProjects = [];
     categories = [];
