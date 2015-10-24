@@ -12,7 +12,7 @@ export class Project {
     this.eventAggregator = eventAggregator;
     this.eventAggregator.subscribe("router:navigation:success", () => {
         this.controller.ok();
-    })
+    });
   }
 
   attached() {

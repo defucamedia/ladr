@@ -1,11 +1,11 @@
 import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
-import {Router} from 'aurelia-router';
 import {DialogService} from 'aurelia-dialog';
 import {Project} from './project';
+import {EventAggregator} from 'aurelia-event-aggregator';
 import 'fetch';
 
-@inject(HttpClient, Router, DialogService)
+@inject(HttpClient, DialogService, EventAggregator)
 export class Projects {
     projects = [];
     allProjects = [];
@@ -13,19 +13,23 @@ export class Projects {
     category = "";
     query = "";
 
-    constructor(http, router, dialogService) {
+    constructor(http, dialogService, eventAggregator) {
         http.configure(config => {
-          config
-            .useStandardConfiguration();
+            config.useStandardConfiguration();
         });
 
         this.http = http;
         this.dialogService = dialogService;
+        eventAggregator.subscribe("router:navigation:success", (a) => {
+            if (a.instruction.fragment == "/projects") {
+                this.handleNav(a.instruction.queryParams);
+            }
+        });
     }
 
     changeCat(cat) {
         this.query = "";
-        
+
         if (!cat) {
             this.projects = this.allProjects;
             this.category = '';
@@ -71,15 +75,15 @@ export class Projects {
                     .sort(function(a,b) {
                         return a.localeCompare(b);
                     });
-                    console.log(this.categories);
-
-                if (params.cat) {
-                    this.changeCat(params.cat);
-                }
-                if (params.q) {
-                    this.search(params.q);
-                }
             });
+    }
+
+    handleNav(params) {
+        this.changeCat(params.cat);
+
+        if (params.q) {
+            this.search(params.q);
+        }
     }
 }
 

@@ -8,9 +8,9 @@
         </span>
     </form>
     <ol>
-        <li class="cat ${category == '' ? 'active' : ''}"><a route-href="route: projects;" click.delegate="changeCat('')">All</a></li>
+        <li class="cat ${category == '' ? 'active' : ''}"><a route-href="route: projects;">All</a></li>
         <li repeat.for="c of categories" class="cat ${$parent.category == c.toLowerCase() ? 'active' : ''}">
-            <a route-href="route: projects; params.bind: { cat: c }" click.delegate="$parent.changeCat(c)">${c}</a>
+            <a route-href="route: projects; params.bind: { cat: c }">${c}</a>
         </li>
     </ol>
     <ul>
