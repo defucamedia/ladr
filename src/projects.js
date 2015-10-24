@@ -10,6 +10,7 @@ export class Projects {
     projects = [];
     allProjects = [];
     categories = [];
+    category = "";
     query = "";
 
     constructor(http, router, dialogService) {
@@ -23,25 +24,30 @@ export class Projects {
     }
 
     changeCat(cat) {
+        this.query = "";
+        
         if (!cat) {
             this.projects = this.allProjects;
+            this.category = '';
             return;
         }
 
         cat = cat.toLowerCase();
+        this.category = cat;
         this.projects = this.allProjects.filter(function(p) {
             return p.categories.some(function(c) { return c.toLowerCase().indexOf(cat) !== -1 });
         });
     }
 
     search(q) {
-      this.query = q || this.query;
-      var q = this.query.toLowerCase();
-      this.projects = this.allProjects.filter(function(p) {
-          return p.categories.some(function(c) { return c.toLowerCase().indexOf(q) !== -1 }) ||
+        this.category = "";
+        this.query = q || this.query;
+        var q = this.query.toLowerCase();
+        this.projects = this.allProjects.filter(function(p) {
+            return p.categories.some(function(c) { return c.toLowerCase().indexOf(q) !== -1 }) ||
                  p.tags.some(function(t) { return t.toLowerCase().indexOf(q) !== -1 }) ||
                  p.name.toLowerCase().indexOf(q) !== -1;
-      });
+        });
     }
     project(slug) {
         var project = this.allProjects.find(function(p) {

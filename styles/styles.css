@@ -31,6 +31,21 @@ a, a:hover {
     height: 200px;
 }
 
+#projects form {
+    width: 66%;
+    margin: 0 auto;
+}
+
+#projects .cat a {
+    color: grey;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+#projects .cat.active a {
+    color: black;
+}
+
 #people {
     list-style: none;
     padding: 0;
