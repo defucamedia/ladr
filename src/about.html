@@ -8,10 +8,10 @@
               <h2>${p.name}</h2>
               <div>${p.certs}</div>
               <div>${p.title}</div>
-              <div>${p.email}</div>
+              <div><a href="mailto:${p.email}">${p.email}</a></div>
             </div>
             <div>
-              <p>${p.desc}</p>
+              <p repeat.for="d of p.desc">${d}</p>
           </div>
         </li>
     </ul>

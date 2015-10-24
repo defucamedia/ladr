@@ -5,7 +5,10 @@
         "title": "Chief Hosa",
         "certs": "ACME",
         "avatar": "/images/people/dduck.png",
-        "desc": "lots o good info"
+        "desc": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in imperdiet diam, a placerat nisl. Aliquam pharetra sodales erat ut porttitor. Aliquam vehicula, nibh at varius ullamcorper, felis elit bibendum neque, vel tincidunt ante nulla at dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse vestibulum molestie diam quis dictum. Quisque elit quam, imperdiet eu iaculis a, dignissim eu massa. Praesent scelerisque nunc id magna tempus blandit. Vestibulum sed fermentum sapien. Nullam luctus diam sed eros hendrerit, sit amet eleifend erat tincidunt. Phasellus dignissim sagittis libero, at imperdiet urna consequat a. Etiam commodo nulla sapien, ac ullamcorper lacus convallis et. Sed vitae ullamcorper purus. Phasellus massa nisl, sollicitudin at tincidunt id, egestas eu tortor. Fusce non rhoncus risus. Quisque ut erat fermentum, aliquam quam sit amet, tempus velit. Nunc mollis erat consectetur, bibendum eros vitae, dictum arcu.",
+            "Aliquam consequat, turpis in lobortis consequat, felis velit euismod purus, ut interdum felis ante sit amet nulla. Nam at eros sed purus commodo vulputate. Vivamus sit amet felis at purus accumsan porttitor. Aenean rutrum varius rutrum. Duis vitae lacinia arcu. Vestibulum ultrices lacinia consequat. Maecenas interdum convallis sem, bibendum dictum lacus consectetur non. Praesent ornare venenatis lorem, sed lacinia nunc aliquet sollicitudin. Integer tristique vestibulum lectus in tincidunt. Curabitur mauris sapien, porta sed magna vitae, tincidunt ultricies ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque at erat vel diam elementum rutrum eget sit amet purus. Etiam lobortis eu justo at finibus."
+        ]
     },
     {
         "name": "Yosemite Sam",
@@ -13,6 +16,8 @@
         "title": "Gunslinger",
         "certs": "ACME",
         "avatar": "/images/people/ysam.jpg",
-        "desc": "lots o good info"
+        "desc": [
+            "lots o good info"
+        ]
     }
 ]
