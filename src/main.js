@@ -6,5 +6,7 @@ export function configure(aurelia) {
     .developmentLogging()
     .plugin('aurelia-dialog');
 
+    aurelia.use.plugin('aurelia-animator-css');
+
   aurelia.start().then(a => a.setRoot());
 }
