@@ -64,6 +64,32 @@ a, a:hover {
     margin-top: 2rem;
 }
 
+#awards, #awards ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+#awards span, #awards ul {
+    display: inline-block;
+}
+
+#awards ul li {
+    margin-bottom: 1rem;
+}
+
+#awards span {
+    font-size:1.5rem;
+    font-weight: 400;
+    width: 15%;
+    margin-top: .75rem;
+}
+
+#awards li:hover {
+    background-color: #fdfffa;
+}
+
 .splash {
     text-align: center;
     margin: 10% 0 0 0;
