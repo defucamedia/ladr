@@ -241,6 +241,7 @@ h2 {
     margin: 0;
     border-radius: 0;
     border-width: 0 0 1px 0;
+    min-height: 0;
 }
 
 .navbar-default {
@@ -256,6 +257,31 @@ h2 {
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     background-color: inherit;
     border-bottom: solid 3px black;
+}
+
+.navbar-default .navbar-brand:hover {
+    background-color: white;
+}
+
+.navbar-brand {
+    position: absolute;
+    top: 1.3rem;
+    border: solid 1px #f9fbf6;
+    background: white;
+}
+
+.navbar-brand span:first-of-type {
+    color: red;
+}
+
+.navbar-brand span {
+    color: green;
+    text-transform: uppercase;
+    margin-left: 1rem;
+}
+
+.container {
+    padding: 0;
 }
 
 @media print
@@ -279,6 +305,12 @@ h2 {
 @media (min-width: 992px) {
     .container {
         width: 900px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-nav > li > a {
+        padding-bottom: .3rem;
     }
 }
 
