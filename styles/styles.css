@@ -73,6 +73,7 @@ a, a:hover {
 #people h2 {
     font-size: 2rem;
     margin: 0;
+    text-align: left;
 }
 
 #people p:first-of-type {
