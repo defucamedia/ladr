@@ -26,30 +26,36 @@ export class Contact {
       this.canSubmit = false;
       var formData = new FormData();
       formData.append('subject', 'Contact Form');
-      formData.append('recipients', "test@ladrla.ca");
+      formData.append('recipients', "misc@cyxmusic.com");
       formData.append('realname', this.name);
       formData.append('email', this.email);
       formData.append('message', this.message);
 
-      setTimeout(function() {
-          self.submitted = true;
-          self.result.status = "success";
-          self.result.message = "We have recieved your message.";
-          setTimeout(() => {
-              self.submitted = false;
-              self.canSubmit = true;
-              self.result.message = "";
-          }, 2000);
-      }, 1000);
+    //   setTimeout(function() {
+    //       self.submitted = true;
+    //       self.result.status = "success";
+    //       self.result.message = "Your message has been sent.";
+    //       setTimeout(() => {
+    //           self.submitted = false;
+    //           self.canSubmit = true;
+    //           self.result.message = "";
+    //       }, 2000);
+    //   }, 1000);
 
-    //   this.http
-    //       .post("formmail.php", formData)
-    //       .then(function() {
-    //           this.canSubmit = true;
-    //           this.name = '';
-    //           this.email = '';
-    //           this.message = '';
-    //       })
-
+      this.http
+          .post("formmail.php", formData)
+          .then(() => {
+              self.submitted = true;
+              self.result.status = "success";
+              self.result.message = "Your message has been sent.";
+              setTimeout(() => {
+                  self.submitted = false;
+                  self.canSubmit = true;
+                  self.result.message = "";
+                  self.name = '';
+                  self.email = '';
+                  self.message = '';
+              }, 2000);
+          });
   }
 }
