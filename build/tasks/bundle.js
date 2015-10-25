@@ -9,8 +9,7 @@ var config = {
       includes: [
         '*',
         '*.html!text',
-        '*.css!text',
-        'bootstrap/css/bootstrap.css!text'
+        '*.css!text'
       ],
       options: {
         inject: true,
