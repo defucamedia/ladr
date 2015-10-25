@@ -233,6 +233,14 @@ h2 {
     margin: 0 auto;
 }
 
+#logo {
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+}
+
 .carousel .item p {
     text-align: center;
 }
@@ -268,16 +276,27 @@ h2 {
     top: 1.3rem;
     border: solid 1px #f9fbf6;
     background: white;
+    padding: 10px;
+    height: 65px;
 }
 
 .navbar-brand span:first-of-type {
-    color: red;
+    color: #205350;
+    font-weight: bold;
 }
 
 .navbar-brand span {
-    color: green;
+    color: #a5d032;
     text-transform: uppercase;
     margin-left: 1rem;
+    vertical-align: top;
+    margin-top: 15px;
+    display: inline-block;
+    font-size: smaller;
+}
+
+.navbar .container {
+    padding: 1rem 0 0 0;
 }
 
 .container {
