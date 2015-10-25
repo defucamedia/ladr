@@ -1,6 +1,6 @@
 import {inject} from 'aurelia-framework';
-import {HttpClient} from 'aurelia-fetch-client';
-import 'fetch';
+import {HttpClient} from 'aurelia-http-client';
+//import 'fetch';
 
 @inject(HttpClient)
 export class Contact {
@@ -13,11 +13,6 @@ export class Contact {
     result = { status: "success", message: "" };
 
   constructor(http){
-    http.configure(config => {
-      config
-        .useStandardConfiguration();
-    });
-
     this.http = http;
   }
 
@@ -31,17 +26,6 @@ export class Contact {
       formData.append('email', this.email);
       formData.append('message', this.message);
 
-    //   setTimeout(function() {
-    //       self.submitted = true;
-    //       self.result.status = "success";
-    //       self.result.message = "Your message has been sent.";
-    //       setTimeout(() => {
-    //           self.submitted = false;
-    //           self.canSubmit = true;
-    //           self.result.message = "";
-    //       }, 2000);
-    //   }, 1000);
-
       this.http
           .post("formmail.php", formData)
           .then(() => {
@@ -49,13 +33,25 @@ export class Contact {
               self.result.status = "success";
               self.result.message = "Your message has been sent.";
               setTimeout(() => {
-                  self.submitted = false;
-                  self.canSubmit = true;
-                  self.result.message = "";
-                  self.name = '';
-                  self.email = '';
-                  self.message = '';
+                  self.resetForm();
+              }, 2000);
+          })
+          .catch(e => {
+              self.submitted = true;
+              self.result.status = "danger";
+              self.result.message = "Your message was not sent.";
+              setTimeout(() => {
+                  self.resetForm();
               }, 2000);
           });
+  }
+
+  resetForm() {
+      this.submitted = false;
+      this.canSubmit = true;
+      this.result.message = "";
+      this.name = '';
+      this.email = '';
+      this.message = '';
   }
 }
