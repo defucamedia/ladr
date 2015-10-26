@@ -202,6 +202,21 @@ dialog-container .modal {
     border-radius: 6px;
 }
 
+ai-dialog-overlay.active {
+    opacity: .4 !important;
+    background-color: black;
+}
+
+ai-dialog-container .modal {
+    display: block;
+    position: absolute;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    /*transform: translateX(-50%);*/
+}
+
 h2 {
     text-align: center;
     text-transform: capitalize;
