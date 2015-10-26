@@ -90,6 +90,9 @@ a, a:hover {
 #awards span, #awards ul {
     display: inline-block;
 }
+#awards ul {
+    width: 84%;
+}
 
 #awards ul li {
     margin-bottom: 1rem;
