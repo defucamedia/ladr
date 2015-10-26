@@ -373,8 +373,8 @@ h2 {
 
 /* animate page transitions */
 section.au-enter-active {
-  -webkit-animation: fadeInRight 1s;
-  animation: fadeInRight 1s;
+  -webkit-animation: fadeInRight .5s;
+  animation: fadeInRight .5s;
 }
 
 div.au-stagger {
