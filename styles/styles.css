@@ -235,6 +235,7 @@ h2 {
     border: 0;
     font-style: italic;
     font-size: inherit;
+    margin: 1rem 0;
 }
 
 #testimonials blockquote footer {
