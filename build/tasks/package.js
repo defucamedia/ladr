@@ -34,6 +34,11 @@ gulp.task('package-css', function() {
     .pipe(gulp.dest(paths.artifacts + 'styles/'));
 });
 
+gulp.task('package-images', function() {
+  return gulp.src(paths.images)
+    .pipe(gulp.dest(paths.artifacts + 'images/'));
+});
+
 // this task calls the clean task (located
 // in ./clean.js), then runs the build-system
 // and build-html tasks in parallel
@@ -42,7 +47,7 @@ gulp.task('package', function(callback) {
   return runSequence(
     'build',
     'bundle',
-    ['package-site', 'package-dist', 'package-dependencies', 'package-css'],
+    ['package-site', 'package-dist', 'package-dependencies', 'package-css', 'package-images'],
     'unbundle',
     callback
   );

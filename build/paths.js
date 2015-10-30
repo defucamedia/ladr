@@ -11,6 +11,7 @@ module.exports = {
   html: appRoot + '**/*.html',
   css: appRoot + '**/*.css',
   style: 'styles/**/*.css',
+  images: 'images/*.*',
   output: outputRoot,
   artifacts: artifactsRoot,
   doc:'./doc',
