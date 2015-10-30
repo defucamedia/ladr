@@ -6,7 +6,7 @@ var paths = require('../paths');
 
 var sitePaths = [paths.output + 'app-build.js', paths.output + 'aurelia.js'];
 var dependenciesPaths = paths.jspm + '**/*.*';
-var rootFiles = ['.htaccess', 'config.js', 'favicon.ico', 'formmail.php', 'index.html', 'index.js'];
+var rootFiles = ['.htaccess', 'config.js', 'favicon.ico', 'formmail.php', 'fmconfig.ini', 'index.html', 'index.js'];
 
 // copies changed dist files to the output directory
 gulp.task('package-dist', function () {
