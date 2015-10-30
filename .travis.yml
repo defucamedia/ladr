@@ -8,9 +8,10 @@ cache:
     - node_modules
 
 install:
-  - npm install -g bower
+  - npm install -g gulp
+  - npm install -g jspm
   - npm install
-  - bower install
+  - jspm install -y
 
 script:
-  - npm test
+  - gulp build
