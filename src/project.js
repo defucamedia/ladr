@@ -4,25 +4,25 @@ import {EventAggregator} from 'aurelia-event-aggregator';
 
 @inject(DialogController, EventAggregator)
 export class Project {
-  project = {};
+    project = {};
 
-  constructor(controller, eventAggregator){
-    this.controller = controller;
-    controller.settings.lock = false;
-    this.eventAggregator = eventAggregator;
-    this.eventAggregator.subscribe("router:navigation:success", () => {
+    constructor(controller, eventAggregator){
+        this.controller = controller;
+        controller.settings.lock = false;
+        this.eventAggregator = eventAggregator;
+        this.eventAggregator.subscribe("router:navigation:success", () => {
+            this.controller.ok();
+        });
+    }
+
+    attached() {
+        jQuery(this.carousel).carousel();
+    }
+    activate(project) {
+        this.project = project;
+    }
+
+    close() {
         this.controller.ok();
-    });
-  }
-
-  attached() {
-      jQuery(this.carousel).carousel();
-  }
-  activate(project) {
-      this.project = project;
-  }
-
-  close() {
-      this.controller.ok();
-  }
+    }
 }

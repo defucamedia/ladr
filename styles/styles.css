@@ -202,11 +202,12 @@ ai-dialog-overlay.active {
 ai-dialog-container .modal {
     display: block;
     position: absolute;
-    left: auto;
-    top: auto;
+    margin: 0 !important;
+    left: 50%;
+    top: 10%;
     bottom: auto;
     right: auto;
-    /*transform: translateX(-50%);*/
+    transform: translateX(-50%);
 }
 
 h2 {
