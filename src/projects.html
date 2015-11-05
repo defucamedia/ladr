@@ -13,7 +13,7 @@
         </li>
     </ol>
     <ul>
-        <li repeat.for="p of projects">
+        <li class="au-animate" repeat.for="p of projects">
             <a href="#" class="thumb" click.delegate="$parent.project(p.slug)">
                 <img src="${p.images[0]}" title="${p.name}" />
             </a>

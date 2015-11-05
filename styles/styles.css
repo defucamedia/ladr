@@ -368,9 +368,8 @@ h2 {
 }
 
 /* animate page transitions */
-section.au-enter-active {
-  -webkit-animation: fadeIn .5s;
-  animation: fadeIn .7s;
+.au-enter-active {
+  animation: fadeIn .5s;
 }
 
 div.au-stagger {
