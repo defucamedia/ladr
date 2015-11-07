@@ -39,6 +39,7 @@ To run the app, follow these steps.
  To prepare files for upload, follow these steps.
 
  1. Package all files by running the following command:
+ 
    ```shell
    gulp pacakge
    ```
