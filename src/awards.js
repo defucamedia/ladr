@@ -4,7 +4,7 @@ import 'fetch';
 
 @inject(HttpClient)
 export class Awards {
-  heading = 'The accolades.';
+  heading = 'Awards.';
   awards = [];
 
   constructor(http){
