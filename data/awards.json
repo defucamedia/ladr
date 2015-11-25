@@ -1,7 +1,8 @@
 [
-    { "year": 2015, "desc": "award 1" },
-    { "year": 2015, "desc": "award 2" },
-    { "year": 2014, "desc": "award 3" },
-    { "year": 2014, "desc": "award 4" },
-    { "year": 2014, "desc": "award 5" }
+    { "name": 2015, "desc": "award 1", "sortGroup": 1 },
+    { "name": 2015, "desc": "award 2", "sortGroup": 1 },
+    { "name": 2014, "desc": "award 3", "sortGroup": 1 },
+    { "name": 2014, "desc": "award 4", "sortGroup": 1 },
+    { "name": 2014, "desc": "award 5", "sortGroup": 1 },
+    { "name": "text", "desc": "yeeha", "sortGroup": 0 }
 ]

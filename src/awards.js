@@ -20,14 +20,16 @@ export class Awards {
     return this.http.fetch('data/awards.json')
       .then(response => response.json())
       .then(awards => {
-          this.awards = awards.groupBy(function(a) { return a.year; })
+          this.awards = awards.groupBy(function(a) { return a.name; })
                                 .map(function(a) {
                                     return {
-                                        year: a.key.year,
+                                        name: a.key.name,
+                                        sortGroup: a.key.sortGroup,
                                         values: a.group.map(function(b) { return b.desc })
                                     };
                                 })
-                                .sort(function(a, b) { return b.year - a.year; });
+                                .sort(firstBy(function(a, b) { return a.sortGroup - b.sortGroup; })
+                                        .thenBy(function(a, b) { return b.name - a.name }));
       });
   }
 }
@@ -55,3 +57,5 @@ Array.prototype.groupBy = function(hash){
     return {key: _map[key].key, group: _map[key].group};
   });
 }
+
+var firstBy=function(){function n(n,t){if("function"!=typeof n){var r=n;n=function(n,t){return n[r]<t[r]?-1:n[r]>t[r]?1:0}}return-1===t?function(t,r){return-n(t,r)}:n}function t(t,u){return t=n(t,u),t.thenBy=r,t}function r(r,u){var f=this;return r=n(r,u),t(function(n,t){return f(n,t)||r(n,t)})}return t}();
