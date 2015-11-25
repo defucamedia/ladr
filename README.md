@@ -1,4 +1,4 @@
-# Ladr [![Build Status](https://travis-ci.org/defucamedia/ladr.svg?branch=master)](https://travis-ci.org/defucamedia/ladr)
+# Ladr
 
 ## Running The App
 
@@ -39,7 +39,7 @@ To run the app, follow these steps.
  To prepare files for upload, follow these steps.
 
  1. Package all files by running the following command:
- 
+
    ```shell
    gulp pacakge
    ```
